@@ -11,11 +11,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full bg-slate-50">
+    <html lang="en">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className="h-full text-slate-900 font-sans antialiased flex flex-col">
+      <body className="bg-slate-100 text-slate-900 font-sans antialiased">
         {children}
       </body>
     </html>

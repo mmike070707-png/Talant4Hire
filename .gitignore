@@ -8,3 +8,5 @@ out/
 *.log
 .DS_Store
 app/layout.tsx.backup
+.vercel
+.env*
