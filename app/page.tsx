@@ -88,7 +88,7 @@ export default function Talant4HireHub() {
               playsInline 
               className="w-full h-full object-cover"
               poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80">
-              <source src="/jason-ad.mp4" type="video/mp4" />
+              <source src="/jason-styles.mp4" type="video/mp4" />
             </video>
             <div className="absolute bottom-1 right-1 bg-emerald-500 w-3 h-3 rounded-full border-2 border-slate-900 animate-pulse" title="Jason Styles Active"></div>
           </div>
