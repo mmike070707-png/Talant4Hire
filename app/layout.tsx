@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Talent4Hire - Holland MI Manufacturing Hub',
+  title: 'Talant4Hire - Holland MI Manufacturing Hub',
   description: 'Autonomous AI Recruitment Platform powered by Jason Styles',
 };
 

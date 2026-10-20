@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function Talent4HireHub() {
+export default function Talant4HireHub() {
   const [activeTab, setActiveTab] = useState('jobs');
   const [currentTier, setCurrentTier] = useState('Growth Recruiter ($249/mo)');
 
@@ -43,7 +43,7 @@ export default function Talent4HireHub() {
               <i className="fa-solid fa-industry text-lg"></i>
             </div>
             <div>
-              <span className="text-xl font-bold tracking-tight">Talent4Hire</span>
+              <span className="text-xl font-bold tracking-tight">Talant4Hire</span>
               <span className="hidden sm:inline-block text-xs bg-slate-800 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30 ml-2">Holland, MI Hub</span>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Talent4HireHub() {
       <div className="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2 text-xs text-center font-medium shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2">
           <i className="fa-solid fa-triangle-exclamation text-amber-600"></i>
-          <span><strong>Notice:</strong> All job postings are independently sourced for Holland, MI manufacturing companies and are <strong>not affiliated with Talent4Hire</strong>.</span>
+          <span><strong>Notice:</strong> All job postings are independently sourced for Holland, MI manufacturing companies and are <strong>not affiliated with Talant4Hire</strong>.</span>
         </div>
       </div>
 
@@ -303,8 +303,8 @@ export default function Talent4HireHub() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 mt-12 py-6 text-center text-xs text-slate-500 space-y-1">
-        <p>© 2026 Talent4Hire Hub & Jason Styles AI Recruiter. All rights reserved.</p>
-        <p className="text-amber-600 font-medium"><i className="fa-solid fa-triangle-exclamation mr-1"></i> Independently curated for Holland, MI manufacturing companies. Not affiliated with Talent4Hire.</p>
+        <p>© 2026 Talant4Hire Hub & Jason Styles AI Recruiter. All rights reserved.</p>
+        <p className="text-amber-600 font-medium"><i className="fa-solid fa-triangle-exclamation mr-1"></i> Independently curated for Holland, MI manufacturing companies. Not affiliated with Talant4Hire.</p>
       </footer>
     </div>
   );

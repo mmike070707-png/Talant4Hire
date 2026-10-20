@@ -1,5 +1,5 @@
 {
-  "name": "talent4hire",
+  "name": "talant4hire",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "next": "^14.2.0",
-    "lucide-react": "^0.300.0"
+    "next": "^14.2.0"
   },
   "devDependencies": {
     "postcss": "^8",
