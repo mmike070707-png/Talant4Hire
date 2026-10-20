@@ -5,9 +5,7 @@ import React, { useState } from 'react';
 export default function Talent4HireHub() {
   const [activeTab, setActiveTab] = useState('jobs');
   const [currentTier, setCurrentTier] = useState('Growth Recruiter ($249/mo)');
-  const [isSubscribed, setIsSubscribed] = useState(true);
 
-  // Jason Styles contextual messages per page
   const jasonMessages = {
     jobs: "Hello! I'm Jason Styles, your AI Recruitment Host. I've independently aggregated these Holland, MI manufacturing openings. Select any role to begin your automated video screening with me.",
     candidate: "Welcome to your Candidate Hub. I've scanned your profile against local plant standards. Your questionnaire fit score is sitting strong at 94%!",
@@ -80,7 +78,7 @@ export default function Talent4HireHub() {
       {/* Main Content */}
       <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         
-        {/* Jason Styles AI Assistant Bar (Present on every page with page-relevant help) */}
+        {/* Jason Styles AI Assistant Bar */}
         <section className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-5 rounded-2xl shadow-xl border border-blue-500/30 flex flex-col md:flex-row items-center gap-6">
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 bg-slate-800 rounded-2xl overflow-hidden border-2 border-blue-400 shadow-inner flex-shrink-0 flex items-center justify-center">
             <video 
@@ -230,7 +228,7 @@ export default function Talent4HireHub() {
                       </ul>
                     </div>
                     <button 
-                      onClick={() => { setCurrentTier(`${tier.name} (${tier.price})`); setIsSubscribed(true); alert(`Successfully upgraded/subscribed to ${tier.name}! Jason Styles is now powering your autonomous pipeline.`); }}
+                      onClick={() => { setCurrentTier(`${tier.name} (${tier.price})`); alert(`Successfully upgraded/subscribed to ${tier.name}! Jason Styles is now powering your autonomous pipeline.`); }}
                       className={`w-full py-3 rounded-xl text-sm font-semibold transition-all shadow-sm ${currentTier.includes(tier.name) ? 'bg-emerald-600 text-white' : 'bg-slate-900 hover:bg-slate-800 text-white'}`}>
                       {currentTier.includes(tier.name) ? 'Active Plan' : 'Upgrade & Activate'}
                     </button>
