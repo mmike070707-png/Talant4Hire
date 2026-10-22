@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import JasonAssistant from './JasonAssistant';
 
 export default function Talant4HireHub() {
   const [activeTab, setActiveTab] = useState('jobs');
@@ -9,7 +10,7 @@ export default function Talant4HireHub() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const jasonMessages = {
-    jobs: "Hello! I'm Jason Styles, your AI Recruitment Host. Use the category dropdown below to filter local Holland, MI openings or click 'Apply with AI' for instant automated screening.",
+    jobs: "Hello! I'm Jason Styles, your AI Recruitment Host. Use the category dropdown below to filter local Holland, MI openings or select 'Apply Now' to visit the employer's careers page.",
     candidate: "Welcome to your Candidate Hub. Review your questionnaire fit scores, video interview analytics, and active profile status managed by my AI algorithms.",
     employer: "Employer AI Hub online. Select your paid subscription tier, configure automated application screening, and review candidate ranking analytics below."
   };
@@ -36,11 +37,11 @@ export default function Talant4HireHub() {
   ];
 
   const jobsList = [
-    { company: 'Gentex Corporation', loc: 'Holland, MI (Northside)', role: '3rd Shift Production Team Lead', pay: '$23 - $27 / hr', category: 'Production & Assembly' },
-    { company: 'Haworth Inc.', loc: 'Holland, MI (Adams St)', role: 'Machine Builder Apprentice', pay: '$22 - $26 / hr', category: 'Skilled Trades' },
-    { company: 'LG Energy Solution', loc: 'Holland, MI (E. 48th St)', role: 'Cell Manufacturing Technician', pay: '$24 - $29 / hr', category: 'Engineering & Tech' },
-    { company: 'Request Foods', loc: 'Holland, MI (South Washington)', role: 'Machine Operator – 2nd Shift', pay: '$20 - $22 / hr', category: 'Production & Assembly' },
-    { company: 'Magna Engineered Glass', loc: 'Holland, MI (John F Donnelly Dr)', role: 'Manufacturing Engineer', pay: '$85,000 - $110,000 / yr', category: 'Engineering & Tech' }
+    { company: 'Gentex Corporation', applyUrl: 'https://careers.gentex.com/jobs/', loc: 'Holland, MI (Northside)', role: '3rd Shift Production Team Lead', pay: '$23 - $27 / hr', category: 'Production & Assembly' },
+    { company: 'Haworth Inc.', applyUrl: 'https://careers.haworth.com/viewalljobs/?locale=en_US', loc: 'Holland, MI (Adams St)', role: 'Machine Builder Apprentice', pay: '$22 - $26 / hr', category: 'Skilled Trades' },
+    { company: 'LG Energy Solution', applyUrl: 'https://lgenergymi.com/careers/', loc: 'Holland, MI (E. 48th St)', role: 'Cell Manufacturing Technician', pay: '$24 - $29 / hr', category: 'Engineering & Tech' },
+    { company: 'Request Foods', applyUrl: 'https://www.requestfoods.com/careers/', loc: 'Holland, MI (South Washington)', role: 'Machine Operator – 2nd Shift', pay: '$20 - $22 / hr', category: 'Production & Assembly' },
+    { company: 'Magna Engineered Glass', applyUrl: 'https://www.magna.com/careers', loc: 'Holland, MI (John F Donnelly Dr)', role: 'Manufacturing Engineer', pay: '$85,000 - $110,000 / yr', category: 'Engineering & Tech' }
   ];
 
   const filteredJobs = selectedCategory === 'All Manufacturing' 
@@ -79,6 +80,7 @@ export default function Talant4HireHub() {
               className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all flex items-center gap-2 ${activeTab === 'employer' ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30' : 'text-slate-300 hover:text-white hover:bg-slate-800'}`}>
               <i className="fa-solid fa-briefcase"></i> Employer AI Hub & Tiers
             </button>
+                      <a href="/auth" className="ml-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-emerald-500">Create Account / Sign In</a>
           </nav>
 
           {/* Mobile menu button */}
@@ -95,6 +97,7 @@ export default function Talant4HireHub() {
             <button onClick={() => { setActiveTab('jobs'); setMobileMenuOpen(false); }} className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Job Reel & AI Screen</button>
             <button onClick={() => { setActiveTab('candidate'); setMobileMenuOpen(false); }} className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Candidate Portal</button>
             <button onClick={() => { setActiveTab('employer'); setMobileMenuOpen(false); }} className="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800">Employer AI Hub & Tiers</button>
+            <a href="/auth" className="block rounded-lg bg-emerald-600 px-3 py-2 text-sm font-bold text-white">Create Account / Sign In</a>
           </div>
         )}
       </header>
@@ -116,14 +119,11 @@ export default function Talant4HireHub() {
           
           <div className="relative w-40 h-40 sm:w-48 sm:h-48 bg-slate-800 rounded-2xl overflow-hidden border-4 border-blue-500/50 shadow-2xl flex-shrink-0 flex items-center justify-center group">
             <video 
-              autoPlay 
-              loop 
-              muted 
               playsInline 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80">
+              poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" controls
+              preload="metadata">
               <source src="/jason-styles.mp4" type="video/mp4" />
-              <source src="/jason-ad.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute bottom-2 right-2 bg-emerald-500 w-4 h-4 rounded-full border-2 border-slate-900 animate-pulse" title="Jason Styles Active"></div>
@@ -185,12 +185,8 @@ export default function Talant4HireHub() {
                     </p>
                   </div>
                   <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
-                    <span className="text-xs text-slate-400 font-medium">Screened by Jason Styles</span>
-                    <button 
-                      onClick={() => alert(`Starting Jason Styles Autonomous AI Video Interview for ${job.role} at ${job.company}!`)}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md shadow-blue-600/20 flex items-center gap-2">
-                      <i className="fa-solid fa-video"></i> Apply with AI
-                    </button>
+                    <span className="text-xs text-slate-400 font-medium">Apply directly with employer</span>
+                    <a href={job.applyUrl} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md shadow-blue-600/20 inline-flex items-center gap-2">Apply Now <span aria-hidden="true">↗</span></a>
                   </div>
                 </div>
               ))}
@@ -378,6 +374,7 @@ export default function Talant4HireHub() {
         <p className="font-medium">© 2026 Talant4Hire Hub & Jason Styles AI Recruiter. All rights reserved.</p>
         <p className="text-amber-600 font-semibold"><i className="fa-solid fa-triangle-exclamation mr-1"></i> Independently curated for Holland, MI manufacturing companies. Not affiliated with Talant4Hire.</p>
       </footer>
-    </div>
+      <JasonAssistant />
+      </div>
   );
 }
